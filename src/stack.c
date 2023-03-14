@@ -44,7 +44,7 @@ stack* stack_pop(stack* this)
   free(this);
   return new_head;
 }
-char* stack_peek(stack* this)
+void* stack_peek(stack* this)
 {
   if (!this)
     return NULL;

@@ -14,11 +14,11 @@ void list_destroy(list* this);
 
 list* list_push_back(list* this, char* value);
 list* list_pop_back(list* this);
-char* list_back(list* this);
+void* list_back(list* this);
 
 list* list_push_front(list* this, char* value);
 list* list_pop_front(list* this);
-char* list_front(list* this);
+void* list_front(list* this);
 
 size_t list_len(list* this);
 void list_trace(list* this);

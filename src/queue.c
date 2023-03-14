@@ -45,7 +45,7 @@ queue* queue_pop(queue* this)
   free(this);
   return new_head;
 }
-char* queue_peek(queue* this)
+void* queue_peek(queue* this)
 {
   if (!this)
     return NULL;

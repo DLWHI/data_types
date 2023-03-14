@@ -45,7 +45,7 @@ list* list_pop_back(list* this)
     this->next = NULL;
     return head;
 }
-char* list_back(list* this)
+void* list_back(list* this)
 {
     for (; this->next; this = this->next) {};
     return this->symbols;
@@ -70,7 +70,7 @@ list* list_pop_front(list* this)
     free(this);
     return new_head;
 }
-char* list_front(list* this)
+void* list_front(list* this)
 {
     if (!this)
         return NULL;
