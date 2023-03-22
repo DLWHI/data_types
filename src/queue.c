@@ -54,14 +54,14 @@ queue* queue_pop(queue* this)
   free(this);
   return new_head;
 }
-void* queue_peek(queue* this)
+void* queue_peek(const queue* this)
 {
   if (!this)
     return NULL;
   return this->symbols;
 }
 
-size_t queue_len(queue* this)
+size_t queue_len(const queue* this)
 {
     size_t l = 0;
     for (; this->next; this = this->next, l++) {};
@@ -69,7 +69,7 @@ size_t queue_len(queue* this)
 }
 #ifdef DEBUG_MODE
 #include <stdio.h>
-void queue_trace(queue* this)
+void queue_trace(const queue* this)
 {
   for(; this->next; this = this->next)
     printf("%s\n", this->symbols);

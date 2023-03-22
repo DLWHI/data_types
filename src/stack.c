@@ -53,14 +53,14 @@ stack* stack_pop(stack* this)
   free(this);
   return new_head;
 }
-void* stack_peek(stack* this)
+void* stack_peek(const stack* this)
 {
   if (!this)
     return NULL;
   return this->symbols;
 }
 
-size_t stack_len(stack* this)
+size_t stack_len(const stack* this)
 {
     size_t l = 0;
     for (; this->next; this = this->next, l++) {};
@@ -68,7 +68,7 @@ size_t stack_len(stack* this)
 }
 #ifdef DEBUG_MODE
 #include <stdio.h>
-void stack_trace(stack* this)
+void stack_trace(const stack* this)
 {
   for(; this->next; this = this->next)
     printf("%s\n", this->symbols);

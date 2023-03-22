@@ -11,9 +11,9 @@ void queue_destroy(queue* this);
 
 queue* queue_push(queue* this, char* value);
 queue* queue_pop(queue* this);
-void* queue_peek(queue* this);
+void* queue_peek(const queue* this);
 
-size_t queue_len(queue* this);
-void queue_trace(queue* this);
+size_t queue_len(const queue* this);
+void queue_trace(const queue* this);
 
 #endif

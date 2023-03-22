@@ -54,7 +54,7 @@ list* list_pop_back(list* this)
     this->next = NULL;
     return head;
 }
-void* list_back(list* this)
+void* list_back(const list* this)
 {
     for (; this->next; this = this->next) {};
     return this->symbols;
@@ -79,14 +79,14 @@ list* list_pop_front(list* this)
     free(this);
     return new_head;
 }
-void* list_front(list* this)
+void* list_front(const list* this)
 {
     if (!this)
         return NULL;
     return this->symbols;
 }
 
-size_t list_len(list* this)
+size_t list_len(const list* this)
 {
     size_t l = 0;
     for (; this->next; this = this->next, l++) {};
@@ -94,7 +94,7 @@ size_t list_len(list* this)
 }
 #ifdef DEBUG_MODE
 #include <stdio.h>
-void list_trace(list* this)
+void list_trace(const list* this)
 {
   for(; this->next; this = this->next)
     printf("%s\n", this->symbols);

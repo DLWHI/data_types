@@ -13,7 +13,7 @@ void string_shrink_to_fit(string_t* target);
 
 void string_append(string_t* target, char last);
 void string_backspace(string_t* target);
-size_t string_length(string_t* target);
+size_t string_length(const string_t* target);
 
-const char* string_c_str(string_t* target);
+const char* string_c_str(const string_t* target);
 #endif

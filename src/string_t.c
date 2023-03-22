@@ -53,12 +53,12 @@ void string_backspace(string_t* target)
 {
   target->ptr[target->len] = '\0';
 }
-size_t string_length(string_t* target)
+size_t string_length(const string_t* target)
 {
   return target->len;
 }
 
-const char* string_c_str(string_t* target)
+const char* string_c_str(const string_t* target)
 {
   return target->ptr;
 }
