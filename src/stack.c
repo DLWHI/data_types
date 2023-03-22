@@ -15,6 +15,15 @@ stack* stack_init(char* value)
   head->symbols = value;
   return head;
 }
+stack* stack_copy(const stack* other)
+{
+  if (!other)
+    return NULL;
+  stack* head = stack_init(other->symbols);
+  for (other = other->next; other; other = other->next)
+    head = stack_push(head, other->symbols);
+  return head;
+}
 void stack_destroy(stack* this)
 {
   if (!this)

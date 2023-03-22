@@ -10,6 +10,7 @@ typedef struct list
 } list;
 
 list* list_init(char* value);
+list* list_copy(const list* other);
 void list_destroy(list* this);
 
 list* list_push_back(list* this, char* value);

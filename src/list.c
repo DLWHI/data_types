@@ -8,6 +8,15 @@ list* list_init(char* value)
   head->symbols = value;
   return head;
 }
+list* list_copy(const list* other)
+{
+  if (!other)
+    return NULL;
+  list* head = list_init(other->symbols);
+  for (other = other->next; other; other = other->next)
+    head = list_push_back(head, other->symbols);
+  return head;
+}
 void list_destroy(list* this)
 {
     if (!this)

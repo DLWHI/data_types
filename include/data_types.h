@@ -3,5 +3,6 @@
 #include "list.h"
 #include "stack.h"
 #include "queue.h"
+#include "string_t.h"
 
 #endif

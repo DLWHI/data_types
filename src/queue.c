@@ -15,6 +15,15 @@ queue* queue_init(char* value)
   head->symbols = value;
   return head;
 }
+queue* queue_copy(const queue* other)
+{
+  if (!other)
+    return NULL;
+  queue* head = queue_init(other->symbols);
+  for (other = other->next; other; other = other->next)
+    head = queue_push(head, other->symbols);
+  return head;
+}
 void queue_destroy(queue* this)
 {
   if (!this)

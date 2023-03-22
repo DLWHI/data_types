@@ -6,6 +6,7 @@ typedef unsigned long size_t;
 typedef struct queue queue;
 
 queue* queue_init(char* value);
+queue* queue_copy(const queue* other);
 void queue_destroy(queue* this);
 
 queue* queue_push(queue* this, char* value);
